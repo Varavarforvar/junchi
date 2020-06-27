@@ -1,7 +1,7 @@
 use actix_web::{web, App, HttpServer, HttpResponse, Responder, get };
 use listenfd::ListenFd;
 
-// extern crate diesel;
+extern crate diesel;
 
 // use server::establish_connection;
 
