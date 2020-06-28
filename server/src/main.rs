@@ -25,7 +25,9 @@ async fn index() -> impl Responder {
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
   let mut listenfd = ListenFd::from_env();
+  // TODO: dotenv 获取不到环境变量
   let connspec = env::var("DATABASE_URL").expect("DATABASE_URL");
+
   let manager = ConnectionManager::<MysqlConnection>::new(connspec);
   let pool = r2d2::Pool::builder()
     .build(manager)
