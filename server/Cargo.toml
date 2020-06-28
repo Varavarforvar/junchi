@@ -12,3 +12,4 @@ actix-rt = "^1.0"
 listenfd = "0.3"
 diesel = { version = "1.4.4", features = ["mysql"] }
 dotenv = "0.15.0"
+serde = "1.0.114"
