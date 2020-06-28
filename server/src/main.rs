@@ -5,13 +5,24 @@ use serde::{Deserialize, Serialize};
 extern crate diesel;
 
 use server::establish_connection;
-use server::models::*;
+use server::models::{ Post, NewPost };
 use server::schema::*;
 use diesel::prelude::*;
 
 #[derive(Serialize, Deserialize)]
 struct Posts {
   posts: Vec<Post>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct Create {
+  title: &'static str,
+  body: &'static str,
+}
+
+#[derive(Serialize, Deserialize)]
+struct Success {
+  status: bool,
 }
 
 async fn index() -> impl Responder {
@@ -30,10 +41,6 @@ async fn get_posts() -> impl Responder {
   HttpResponse::Ok().json(Posts {
     posts: results,
   })
-}
-
-async fn create_post() -> impl Responder {
-
 }
 
 #[actix_rt::main]
