@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "parcel-plugin-wasm.rs": "^1.2.16"
-  }
-}
