@@ -3,5 +3,5 @@ target
 .cache
 pkg
 node_modules
-dist
+#dist
 .env

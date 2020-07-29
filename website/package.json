@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "parcel ./static/index.html",
-    "build": "parcel build ./static/index.html"
+    "build": "rm -rf ./dist/* && parcel build ./static/index.html"
   },
   "keywords": [],
   "author": "",
